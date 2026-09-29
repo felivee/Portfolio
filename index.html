@@ -1,0 +1,955 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portofolio — Siswa RPL SMK Negeri 2 Surakarta</title>
+  <meta name="description"
+    content="Portofolio siswa Rekayasa Perangkat Lunak SMK Negeri 2 Surakarta — Technology, Programming & Creative Design Enthusiast.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+    rel="stylesheet">
+  <style>
+    :root {
+      --bg: #080a12;
+      --bg-soft: #0f1220;
+      --card: #12162b;
+      --card2: #171c34;
+      --line: rgba(255, 255, 255, 0.08);
+      --text: #eef1ff;
+      --muted: #9aa3c8;
+      --muted2: #67709a;
+      --primary: #6d5bff;
+      --primary2: #a78bff;
+      --accent: #00e5cc;
+      --accent2: #ff5c8a;
+      --radius: 20px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box
+    }
+
+    html {
+      scroll-behavior: smooth
+    }
+
+    body {
+      font-family: 'Outfit', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      overflow-x: hidden;
+      line-height: 1.6;
+    }
+
+    /* background glow */
+    .bg-glow {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: -1;
+      background:
+        radial-gradient(700px 400px at 20% 0%, rgba(109, 91, 255, 0.22), transparent 60%),
+        radial-gradient(600px 500px at 90% 15%, rgba(0, 229, 204, 0.14), transparent 60%),
+        radial-gradient(800px 600px at 50% 100%, rgba(255, 92, 138, 0.08), transparent 70%);
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit
+    }
+
+    .container {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 0 24px
+    }
+
+    /* NAV */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(16px);
+      background: rgba(8, 10, 18, 0.72);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .nav-inner {
+      height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 700;
+      letter-spacing: -0.02em
+    }
+
+    .logo-mark {
+      width: 36px;
+      height: 36px;
+      border-radius: 10px;
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      display: grid;
+      place-items: center;
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 700;
+      font-size: 16px;
+      color: white;
+      box-shadow: 0 8px 24px rgba(109, 91, 255, 0.35)
+    }
+
+    .logo span {
+      font-size: 15px
+    }
+
+    .logo small {
+      display: block;
+      font-weight: 400;
+      color: var(--muted);
+      font-size: 11px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-top: -2px
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--muted);
+      letter-spacing: 0.04em;
+      text-transform: uppercase
+    }
+
+    .nav-links a:hover {
+      color: white
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--primary), #8a6cff);
+      color: white;
+      padding: 10px 18px;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 600;
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 8px 20px rgba(109, 91, 255, 0.35);
+      transition: .2s
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 12px 28px rgba(109, 91, 255, 0.45)
+    }
+
+    .btn-ghost {
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid var(--line);
+      color: white;
+      padding: 10px 18px;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 500;
+      cursor: pointer;
+      backdrop-filter: blur(10px)
+    }
+
+    .btn-ghost:hover {
+      background: rgba(255, 255, 255, 0.1)
+    }
+
+    /* HERO */
+    .hero {
+      padding: 56px 0 24px;
+      position: relative
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 32px;
+      align-items: center
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(109, 91, 255, 0.12);
+      border: 1px solid rgba(109, 91, 255, 0.22);
+      color: #b8b0ff;
+      padding: 6px 12px;
+      border-radius: 999px;
+      font-size: 12px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-weight: 600
+    }
+
+    .eyebrow .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--accent);
+      box-shadow: 0 0 10px var(--accent)
+    }
+
+    .hero h1 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: clamp(32px, 5vw, 52px);
+      line-height: 0.95;
+      letter-spacing: -0.04em;
+      margin: 18px 0 14px;
+      font-weight: 700
+    }
+
+    .hero h1 span.gradient {
+      background: linear-gradient(135deg, var(--primary2) 0%, var(--accent) 55%, #ff8fab 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .hero-desc {
+      color: var(--muted);
+      font-size: 16px;
+      max-width: 560px;
+      line-height: 1.7
+    }
+
+    .hero-actions {
+      margin-top: 22px;
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap
+    }
+
+    .hero-stats {
+      display: flex;
+      gap: 18px;
+      margin-top: 26px;
+      flex-wrap: wrap
+    }
+
+    .stat-mini {
+      background: var(--card);
+      border: 1px solid var(--line);
+      padding: 12px 14px;
+      border-radius: 16px;
+      min-width: 140px
+    }
+
+    .stat-mini strong {
+      display: block;
+      font-size: 18px;
+      letter-spacing: -0.02em
+    }
+
+    .stat-mini span {
+      font-size: 11px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted2);
+      font-weight: 600
+    }
+
+    /* PROFILE CARD */
+    .profile-card {
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.02));
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      padding: 22px;
+      backdrop-filter: blur(20px);
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4)
+    }
+
+    .profile-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(400px 200px at 80% 0%, rgba(109, 91, 255, 0.18), transparent 70%);
+      pointer-events: none
+    }
+
+    .profile-top {
+      display: flex;
+      gap: 16px;
+      align-items: center;
+      position: relative
+    }
+
+    .avatar {
+      width: 72px;
+      height: 72px;
+      border-radius: 18px;
+      background: linear-gradient(135deg, #1e2350, #2a2f6b);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      display: grid;
+      place-items: center;
+      font-size: 28px;
+      flex-shrink: 0
+    }
+
+    .profile-top h3 {
+      font-size: 18px;
+      letter-spacing: -0.02em;
+      line-height: 1.1
+    }
+
+    .profile-top p {
+      font-size: 12px;
+      color: var(--muted);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      font-weight: 600;
+      margin-top: 4px
+    }
+
+    .badge-rpl {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-top: 10px;
+      background: rgba(0, 229, 204, 0.12);
+      border: 1px solid rgba(0, 229, 204, 0.22);
+      color: #7af0e0;
+      padding: 5px 10px;
+      border-radius: 999px;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase
+    }
+
+    .profile-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 16px;
+      position: relative
+    }
+
+    .tag {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      padding: 7px 10px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid var(--line);
+      color: #cbd2f0
+    }
+
+    .tag.accent {
+      background: rgba(109, 91, 255, 0.18);
+      border-color: rgba(109, 91, 255, 0.3);
+      color: #d0c6ff
+    }
+
+    .profile-quote {
+      margin-top: 16px;
+      background: var(--bg-soft);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 14px 16px;
+      position: relative
+    }
+
+    .profile-quote p {
+      font-size: 13px;
+      color: #c8d0f0;
+      line-height: 1.6;
+      font-style: italic
+    }
+
+    .profile-quote cite {
+      font-size: 11px;
+      color: var(--muted2);
+      font-style: normal;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin-top: 8px;
+      display: block
+    }
+
+    /* IDENTITAS SECTION */
+    section {
+      padding: 48px 0
+    }
+
+    .section-label {
+      font-size: 11px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--primary2);
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 12px
+    }
+
+    .section-label::before {
+      content: "";
+      width: 28px;
+      height: 2px;
+      background: var(--primary);
+      border-radius: 999px
+    }
+
+    .identitas-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 24px;
+      align-items: start
+    }
+
+    .identitas-main {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      padding: 32px;
+      position: relative;
+      overflow: hidden
+    }
+
+    .identitas-main::after {
+      content: "";
+      position: absolute;
+      top: -40px;
+      right: -40px;
+      width: 200px;
+      height: 200px;
+      background: radial-gradient(circle, rgba(109, 91, 255, 0.12), transparent 70%);
+      pointer-events: none
+    }
+
+    .identitas-main h2 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 28px;
+      letter-spacing: -0.03em;
+      line-height: 1.15;
+      margin-bottom: 16px
+    }
+
+    .identitas-main h2 em {
+      font-style: normal;
+      background: linear-gradient(135deg, var(--primary2), var(--accent));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text
+    }
+
+    .identitas-text {
+      color: #c2c9e8;
+      font-size: 15px;
+      line-height: 1.85
+    }
+
+    .identitas-text p {
+      margin-bottom: 14px
+    }
+
+    .identitas-text strong {
+      color: white;
+      font-weight: 600
+    }
+
+    .focus-list {
+      margin-top: 18px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px
+    }
+
+    .focus-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid var(--line);
+      padding: 8px 12px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 600;
+      color: #d6dcff
+    }
+
+    .focus-pill i {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      display: inline-block
+    }
+
+    .c1 {
+      background: #6d5bff
+    }
+
+    .c2 {
+      background: #00e5cc
+    }
+
+    .c3 {
+      background: #ff5c8a
+    }
+
+    .c4 {
+      background: #ffb020
+    }
+
+    /* RIGHT CARDS */
+    .side-stack {
+      display: grid;
+      gap: 16px
+    }
+
+    .info-card {
+      background: var(--card2);
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      padding: 20px
+    }
+
+    .info-card h4 {
+      font-size: 13px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px
+    }
+
+    .skill-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 10px;
+      font-size: 13px
+    }
+
+    .skill-row span {
+      color: #d6dcff;
+      font-weight: 500
+    }
+
+    .skill-row small {
+      color: var(--muted2);
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px
+    }
+
+    .bar {
+      height: 6px;
+      background: rgba(255, 255, 255, 0.06);
+      border-radius: 999px;
+      overflow: hidden;
+      margin-bottom: 14px
+    }
+
+    .bar i {
+      display: block;
+      height: 100%;
+      border-radius: 999px;
+      background: linear-gradient(90deg, var(--primary), var(--accent))
+    }
+
+    .prinsip-list {
+      list-style: none;
+      display: grid;
+      gap: 10px
+    }
+
+    .prinsip-list li {
+      display: flex;
+      gap: 12px;
+      align-items: start;
+      font-size: 13px;
+      color: #c2c9e8;
+      line-height: 1.5
+    }
+
+    .prinsip-list li::before {
+      content: "✓";
+      width: 22px;
+      height: 22px;
+      flex-shrink: 0;
+      display: grid;
+      place-items: center;
+      background: rgba(109, 91, 255, 0.18);
+      border: 1px solid rgba(109, 91, 255, 0.25);
+      color: #b8b0ff;
+      border-radius: 50%;
+      font-size: 11px;
+      font-weight: 700;
+      margin-top: 1px
+    }
+
+    /* VALUES */
+    .values {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-top: 16px
+    }
+
+    .value-card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      padding: 20px;
+      transition: .2s
+    }
+
+    .value-card:hover {
+      transform: translateY(-3px);
+      border-color: rgba(109, 91, 255, 0.3);
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.3)
+    }
+
+    .value-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 12px;
+      display: grid;
+      place-items: center;
+      font-size: 18px;
+      margin-bottom: 12px
+    }
+
+    .value-card h5 {
+      font-size: 14px;
+      margin-bottom: 6px
+    }
+
+    .value-card p {
+      font-size: 13px;
+      color: var(--muted);
+      line-height: 1.6
+    }
+
+    /* FOOTER */
+    footer {
+      padding: 32px 0 40px;
+      border-top: 1px solid var(--line);
+      margin-top: 24px;
+      color: var(--muted2);
+      font-size: 12px
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+      align-items: center
+    }
+
+    .footer-inner strong {
+      color: var(--muted)
+    }
+
+    /* Responsive */
+    @media(max-width:900px) {
+
+      .hero-grid,
+      .identitas-grid {
+        grid-template-columns: 1fr
+      }
+
+      .values {
+        grid-template-columns: 1fr
+      }
+
+      .nav-links {
+        display: none
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="bg-glow"></div>
+
+  <nav>
+    <div class="container nav-inner">
+      <a href="#" class="logo">
+        <div class="logo-mark">R</div>
+        <div>
+          <span>Portofolio RPL</span>
+          <small>SMK Negeri 2 Surakarta</small>
+        </div>
+      </a>
+      <div class="nav-links">
+        <a href="#identitas">Identitas</a>
+        <a href="#keahlian">Keahlian</a>
+        <a href="#karya">Karya</a>
+      </div>
+      <a href="#kontak" class="btn-primary">Hubungi Saya →</a>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="container hero-grid">
+      <div>
+        <div class="eyebrow"><span class="dot"></span> RPL • SMKN 2 Surakarta</div>
+        <h1>Logika yang terstruktur,<br><span class="gradient">kreativitas yang hidup.</span></h1>
+        <p class="hero-desc">
+          Siswa <b style="color:white">RPL SMK Negeri 2 Surakarta</b> —
+          memadukan ketelitian dalam <b style="color:white">pemrograman & manajemen basis data</b> dengan kecintaan pada
+          <b style="color:white">kreativitas, crochet, dan dunia mode.</b>
+        </p>
+        <div class="hero-actions">
+          <a href="#identitas" class="btn-primary">Lihat Identitas Profesional ↓</a>
+          <a href="#keahlian" class="btn-ghost">Keahlian Inti</a>
+        </div>
+        <div class="hero-stats">
+          <div class="stat-mini"><strong>Clean Code</strong><span>Terstruktur & efisien</span></div>
+          <div class="stat-mini"><strong>User-First</strong><span>Desain berorientasi pengguna</span></div>
+          <div class="stat-mini"><strong>Always Learning</strong><span>Adaptif teknologi baru</span></div>
+        </div>
+      </div>
+
+      <div class="profile-card" id="karya">
+        <div class="profile-top">
+          <div class="avatar">🧶</div>
+          <div>
+            <h3>[Nama Kamu]</h3>
+            <p>Siswa • Rekayasa Perangkat Lunak</p>
+            <div class="badge-rpl">● SMK Negeri 2 Surakarta</div>
+          </div>
+        </div>
+        <div class="profile-tags">
+          <span class="tag accent">Programming</span>
+          <span class="tag accent">Database Management</span>
+          <span class="tag">Crochet & Fashion</span>
+          <span class="tag">Creative Design</span>
+        </div>
+        <div class="profile-quote">
+          <p>“Merajut logika layaknya merajut benang — teliti, sabar, dan indah pada akhirnya.”
+          </p>
+          <cite>— Tentang Saya</cite>
+        </div>
+        <div style="margin-top:14px;display:flex;gap:8px;flex-wrap:wrap">
+          <span style="font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--muted2)">Available for PKL •
+            Project • Collaboration</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- IDENTITAS PROFESIONAL -->
+    <section id="identitas">
+      <div class="section-label">Identitas Profesional</div>
+      <div class="identitas-grid">
+        <article class="identitas-main">
+          <h2>Tentang <em>Saya</em></h2>
+          <div class="identitas-text">
+            <p>
+              Halo! Saya adalah siswa jurusan <strong>Rekayasa Perangkat Lunak (RPL) di SMK Negeri 2 Surakarta</strong>
+              yang percaya bahwa teknologi dan kreativitas bisa berjalan beriringan dengan indah.
+            </p>
+            <p>
+              Saya memiliki minat besar pada <strong>pemrograman dan manajemen basis data</strong>, karena saya senang
+              melihat bagaimana sebuah sistem yang rapi di balik layar dapat menciptakan solusi yang efisien dan
+              bermanfaat. Ketelitian, logika yang terstruktur, dan kepekaan terhadap detail adalah nilai yang selalu
+              saya
+              bawa dalam setiap baris kode yang saya tulis.
+            </p>
+            <p>
+              Di sisi lain, saya juga mencintai dunia kreativitas — mulai dari <strong>merajut crochet yang
+                melatih kesabaran dan ketelitian</strong>, hingga eksplorasi <strong>dunia mode dan desain</strong> yang
+              mengasah kepekaan estetika dan ekspresi diri.
+            </p>
+            <p>
+              Bagi saya, merangkai baris kode dan merajut benang memiliki filosofi yang sama: <strong>dibutuhkan
+                kesabaran, presisi, dan sentuhan personal untuk menghasilkan karya yang fungsional sekaligus
+                indah.</strong> Dengan perpaduan logika dan rasa ini, saya siap untuk terus belajar, berkontribusi, dan
+              bertumbuh.
+            </p>
+          </div>
+          <div class="focus-list">
+            <span class="focus-pill"><i class="c1"></i> Programming & Database</span>
+            <span class="focus-pill"><i class="c2"></i> Problem Solving</span>
+            <span class="focus-pill"><i class="c3"></i> Crochet Craft</span>
+            <span class="focus-pill"><i class="c4"></i> Fashion & Design</span>
+          </div>
+        </article>
+
+        <div class="side-stack" id="keahlian">
+          <div class="info-card">
+            <h4>💻 Pemrograman</h4>
+            <div class="skill-row"><span>Java (Dasar — Mahir)</span><small>Java</small></div>
+            <div class="bar"><i style="width:85%"></i></div>
+            <div class="skill-row"><span>Logika Dasar & Struktur Kontrol</span><small>if / loop / switch</small></div>
+            <div class="bar"><i style="width:88%;background:linear-gradient(90deg,#6d5bff,#00e5cc)"></i></div>
+            <div class="skill-row"><span>PBO (OOP)</span><small>class • object • inheritance</small></div>
+            <div class="bar"><i style="width:80%;background:linear-gradient(90deg,#00e5cc,#6d5bff)"></i></div>
+          </div>
+
+          <div class="info-card">
+            <h4>🗄️ Basis Data</h4>
+            <div class="skill-row"><span>DBMS & Manajemen Basis Data</span><small>MySQL</small></div>
+            <div class="bar"><i style="width:82%;background:linear-gradient(90deg,#ff5c8a,#ffb020)"></i></div>
+            <p style="font-size:12px;color:#9aa3c8;line-height:1.6;margin-top:2px">Perancangan tabel, relasi, query dasar (CRUD), dan pengelolaan data yang terstruktur & efisien.</p>
+          </div>
+
+          <div class="info-card">
+            <h4>✨ Kreatif & Pendukung</h4>
+            <ul class="prinsip-list">
+              <li><b style="color:#d6dcff">Crochet / Kerajinan Tangan</b> — ketelitian, kesabaran & kreativitas detail</li>
+              <li><b style="color:#d6dcff">Manajemen Organisasi & Acara</b> — koordinasi, teamwork & tanggung jawab</li>
+              <li><b style="color:#d6dcff">Fashion & Desain</b> — kepekaan estetika & ekspresi visual</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="values">
+        <div class="value-card">
+          <div class="value-icon" style="background:rgba(109,91,255,0.14);border:1px solid rgba(109,91,255,0.22)">🧠
+          </div>
+          <h5>Logical Thinking</h5>
+          <p>Memecah masalah kompleks menjadi solusi yang sistematis melalui pendekatan pemrograman yang terstruktur.
+          </p>
+        </div>
+        <div class="value-card">
+          <div class="value-icon" style="background:rgba(0,229,204,0.12);border:1px solid rgba(0,229,204,0.22)">🎨</div>
+          <h5>Creative Design</h5>
+          <p>Menggabungkan estetika dan fungsi untuk menciptakan antarmuka yang tidak hanya indah, tapi juga intuitif.
+          </p>
+        </div>
+        <div class="value-card">
+          <div class="value-icon" style="background:rgba(255,92,138,0.12);border:1px solid rgba(255,92,138,0.22)">🚀
+          </div>
+          <h5>Growth Mindset</h5>
+          <p>Terbuka pada teknologi baru, siap belajar, beradaptasi, dan bertumbuh bersama industri digital.</p>
+        </div>
+      </div>
+
+      <!-- DAFTAR KEAHLIAN TERSTRUKTUR -->
+      <section id="skills" style="padding-top:16px">
+        <div class="section-label">Keahlian</div>
+        <h2 style="font-family:'Space Grotesk',sans-serif;font-size:26px;letter-spacing:-0.03em;margin-bottom:18px">Daftar Keahlian <span style="background:linear-gradient(135deg,var(--primary2),var(--accent));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">Terstruktur</span></h2>
+        <div class="values" style="grid-template-columns:1fr 1fr;">
+          <div class="value-card" style="text-align:left">
+            <div class="value-icon" style="background:rgba(109,91,255,0.14);border:1px solid rgba(109,91,255,0.22)">💻</div>
+            <h5>1. Keahlian Teknis — Pemrograman</h5>
+            <ul style="list-style:none;display:grid;gap:8px;margin-top:10px;color:#c2c9e8;font-size:13px;line-height:1.6">
+              <li>• <b style="color:white">Bahasa Pemrograman Java</b> — dasar hingga menengah</li>
+              <li>• <b style="color:white">Logika Dasar Pemrograman</b> — algoritma & problem solving</li>
+              <li>• <b style="color:white">Struktur Kontrol</b> — percabangan (if-else, switch) & perulangan (for, while)</li>
+              <li>• <b style="color:white">Pemrograman Berorientasi Objek (PBO/OOP)</b> — class, object, inheritance, encapsulation</li>
+            </ul>
+          </div>
+          <div class="value-card" style="text-align:left">
+            <div class="value-icon" style="background:rgba(0,229,204,0.12);border:1px solid rgba(0,229,204,0.22)">🗄️</div>
+            <h5>2. Keahlian Teknis — Basis Data</h5>
+            <ul style="list-style:none;display:grid;gap:8px;margin-top:10px;color:#c2c9e8;font-size:13px;line-height:1.6">
+              <li>• <b style="color:white">Manajemen Basis Data (DBMS)</b> — konsep & implementasi</li>
+              <li>• <b style="color:white">Perancangan Database</b> — tabel, relasi, primary & foreign key</li>
+              <li>• <b style="color:white">Query Dasar</b> — CREATE, READ, UPDATE, DELETE (CRUD)</li>
+              <li>• <b style="color:white">Pengelolaan Data</b> — terstruktur, efisien & akurat</li>
+            </ul>
+          </div>
+          <div class="value-card" style="text-align:left">
+            <div class="value-icon" style="background:rgba(255,92,138,0.12);border:1px solid rgba(255,92,138,0.22)">🧶</div>
+            <h5>3. Keahlian Kreatif</h5>
+            <ul style="list-style:none;display:grid;gap:8px;margin-top:10px;color:#c2c9e8;font-size:13px;line-height:1.6">
+              <li>• <b style="color:white">Kerajinan Tangan — Crochet</b> — merajut dengan ketelitian & kesabaran tinggi</li>
+              <li>• <b style="color:white">Fashion & Desain</b> — kepekaan estetika, padu padan & ekspresi visual</li>
+              <li>• <b style="color:white">Kreativitas & Detail-Oriented</b> — teliti pada detail kecil yang berdampak besar</li>
+            </ul>
+          </div>
+          <div class="value-card" style="text-align:left">
+            <div class="value-icon" style="background:rgba(255,176,32,0.12);border:1px solid rgba(255,176,32,0.25)">🤝</div>
+            <h5>4. Keahlian Pendukung</h5>
+            <ul style="list-style:none;display:grid;gap:8px;margin-top:10px;color:#c2c9e8;font-size:13px;line-height:1.6">
+              <li>• <b style="color:white">Manajemen Organisasi & Acara</b> — perencanaan & koordinasi kegiatan</li>
+              <li>• <b style="color:white">Kerja Tim & Komunikasi</b> — kolaboratif, komunikatif & bertanggung jawab</li>
+              <li>• <b style="color:white">Problem Solving</b> — analitis & solutif dalam menghadapi tantangan</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- PORTOFOLIO TEKNOLOGI -->
+      <section id="teknologi">
+        <div class="section-label">Portofolio Teknologi</div>
+        <h2 style="font-family:'Space Grotesk',sans-serif;font-size:26px;letter-spacing:-0.03em;margin-bottom:10px">Keahlian di Bidang <span style="background:linear-gradient(135deg,var(--primary2),var(--accent));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">Teknologi</span></h2>
+        <p style="color:var(--muted);font-size:14px;max-width:680px;line-height:1.7;margin-bottom:22px">Dokumentasi kompetensi teknis yang saya bangun selama menempuh jurusan Rekayasa Perangkat Lunak — berfokus pada fondasi pemrograman yang kuat, logika yang terstruktur, dan pengelolaan data yang efisien.</p>
+        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px">
+          <div class="value-card" style="text-align:left;display:flex;flex-direction:column">
+            <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px"><div class="value-icon" style="background:rgba(109,91,255,0.14);border:1px solid rgba(109,91,255,0.22);margin:0">☕</div><span style="font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:var(--primary2);font-weight:700">01 — Programming</span></div>
+            <h5 style="font-size:15px;margin-bottom:8px">Java — Sintaks Dasar & Fondasi</h5>
+            <p style="color:var(--muted);font-size:13px;line-height:1.6;margin-bottom:12px">Memahami sintaks dasar Java: tipe data, variabel, operator, input-output, dan penulisan kode yang bersih serta terstruktur.</p>
+            <ul style="list-style:none;display:grid;gap:6px;color:#c2c9e8;font-size:12.5px;line-height:1.6"><li>• Tipe data, variabel & operator</li><li>• Struktur program & penulisan sintaks yang rapi</li><li>• Penerapan pada studi kasus sederhana</li></ul>
+            <div style="margin-top:14px;display:flex;flex-wrap:wrap;gap:6px"><span class="tag" style="font-size:10px">Java</span><span class="tag" style="font-size:10px">Syntax</span><span class="tag" style="font-size:10px">Clean Code</span></div>
+          </div>
+          <div class="value-card" style="text-align:left;display:flex;flex-direction:column">
+            <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px"><div class="value-icon" style="background:rgba(0,229,204,0.12);border:1px solid rgba(0,229,204,0.22);margin:0">🔀</div><span style="font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:#7af0e0;font-weight:700">02 — Control Flow</span></div>
+            <h5 style="font-size:15px;margin-bottom:8px">Struktur Kontrol & Logika</h5>
+            <p style="color:var(--muted);font-size:13px;line-height:1.6;margin-bottom:12px">Menguasai alur logika program melalui percabangan dan perulangan untuk membangun program yang dinamis.</p>
+            <ul style="list-style:none;display:grid;gap:6px;color:#c2c9e8;font-size:12.5px;line-height:1.6"><li>• Percabangan: <b style="color:white">if-else</b> & <b style="color:white">switch-case</b></li><li>• Perulangan: for, while, do-while</li><li>• Pemecahan masalah berbasis logika kondisional</li></ul>
+            <div style="margin-top:14px;display:flex;flex-wrap:wrap;gap:6px"><span class="tag" style="font-size:10px">if-else</span><span class="tag" style="font-size:10px">switch-case</span><span class="tag" style="font-size:10px">Looping</span></div>
+          </div>
+          <div class="value-card" style="text-align:left;display:flex;flex-direction:column">
+            <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px"><div class="value-icon" style="background:rgba(255,92,138,0.12);border:1px solid rgba(255,92,138,0.22);margin:0">🧩</div><span style="font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:#ff8fab;font-weight:700">03 — OOP / PBO</span></div>
+            <h5 style="font-size:15px;margin-bottom:8px">Object-Oriented Programming</h5>
+            <p style="color:var(--muted);font-size:13px;line-height:1.6;margin-bottom:12px">Menerapkan paradigma PBO untuk membangun kode yang modular, reusable, dan mudah dikembangkan.</p>
+            <ul style="list-style:none;display:grid;gap:6px;color:#c2c9e8;font-size:12.5px;line-height:1.6"><li>• Class, Object & Constructor</li><li>• Encapsulation, Inheritance & Polymorphism</li><li>• Pemodelan entitas dunia nyata ke dalam kode</li></ul>
+            <div style="margin-top:14px;display:flex;flex-wrap:wrap;gap:6px"><span class="tag" style="font-size:10px">OOP</span><span class="tag" style="font-size:10px">PBO</span><span class="tag" style="font-size:10px">Class & Object</span></div>
+          </div>
+        </div>
+        <div style="display:grid;grid-template-columns:1.15fr 0.85fr;gap:16px;margin-top:16px">
+          <div class="value-card" style="text-align:left">
+            <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px"><div class="value-icon" style="background:rgba(255,176,32,0.12);border:1px solid rgba(255,176,32,0.25);margin:0">🧠</div><span style="font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:#ffcc6b;font-weight:700">04 — Problem Solving</span></div>
+            <h5>Pemecahan Masalah & Logika Pemrograman</h5>
+            <p style="color:#c2c9e8;font-size:13px;line-height:1.7;margin-top:8px">Terlatih menganalisis masalah, memecahnya menjadi langkah algoritmik, dan menerjemahkannya ke solusi program yang efisien — melatih berpikir kritis, sistematis, dan solutif.</p>
+            <div style="margin-top:14px;background:var(--bg-soft);border:1px solid var(--line);border-radius:12px;padding:12px 14px"><p style="font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--muted2);line-height:1.6"><span style="color:#7af0e0">if</span> (masalah == kompleks) {<br>&nbsp;&nbsp;analisis → pecah → algoritma → solusi;<br>} <span style="color:#a78bff">// berpikir terstruktur</span></p></div>
+          </div>
+          <div class="value-card" style="text-align:left">
+            <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px"><div class="value-icon" style="background:rgba(109,91,255,0.14);border:1px solid rgba(109,91,255,0.22);margin:0">🗄️</div><span style="font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:var(--primary2);font-weight:700">05 — DBMS</span></div>
+            <h5>Database Management Systems</h5>
+            <p style="color:#c2c9e8;font-size:13px;line-height:1.7;margin-top:8px">Memahami konsep dan peran DBMS dalam mengelola data secara terstruktur, aman, dan efisien — fondasi penting aplikasi berbasis data.</p>
+            <ul style="list-style:none;display:grid;gap:6px;color:#c2c9e8;font-size:12.5px;line-height:1.6;margin-top:10px"><li>• Konsep DBMS & model relasional</li><li>• Perancangan tabel, primary & foreign key</li><li>• Query dasar: CRUD (Create, Read, Update, Delete)</li><li>• Normalisasi & integritas data</li></ul>
+            <div style="margin-top:14px;display:flex;flex-wrap:wrap;gap:6px"><span class="tag" style="font-size:10px">DBMS</span><span class="tag" style="font-size:10px">MySQL</span><span class="tag" style="font-size:10px">CRUD</span><span class="tag" style="font-size:10px">Relational DB</span></div>
+          </div>
+        </div>
+      </section>
+  </main>
+
+  <footer id="kontak">
+    <div class="container footer-inner">
+      <div>
+        <strong>Rekayasa Perangkat Lunak — SMK Negeri 2 Surakarta</strong><br>
+        Code with Logic, Design with Creativity © 2026 • Dibuat dengan semangat belajar
+      </div>
+      <div style="display:flex;gap:10px;align-items:center">
+        <span style="font-family:'JetBrains Mono',monospace">Ganti [Nama Kamu] di index.html → jadi namamu</span>
+      </div>
+    </div>
+  </footer>
+
+</body>
+
+</html>
